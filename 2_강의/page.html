@@ -1,0 +1,196 @@
+<div class="container_visual">
+    <!-- [D] 이전,다음 버튼을 클릭할때마다 캐러셀 형태로 순환 됨 -->
+    <ul class="visual_img">
+        <li class="item" style="background-image: url(http://naverbooking.phinf.naver.net/20170209_66/1486628146913la6nC_JPEG/image.jpg); width: 338px;">
+            <a href="#"> <span class="img_btm_border"></span> <span class="img_right_border"></span> <span class="img_bg_gra"></span>
+            <div class="event_txt">
+                <h4 class="event_txt_tit"></h4>
+                <p class="event_txt_adr"></p>
+                <p class="event_txt_dsc"></p>
+            </div>
+            </a>
+        </li>
+        <li class="item" style="background-image: url(http://naverbooking.phinf.naver.net/20170119_48/1484802596907hmVDm_JPEG/image.jpg); width: 338px;">
+            <a href="#"> <span class="img_btm_border"></span> <span class="img_right_border"></span> <span class="img_bg_gra"></span>
+            <div class="event_txt">
+                <h4 class="event_txt_tit">뮤지컬-김종욱찾기 네이버 예약</h4>
+                <p class="event_txt_adr">대학로 쁘띠첼씨어터</p>
+                <p class="event_txt_dsc">네이버 예매시, 손크림/발크림(중 래덤)을 드립니다</p>
+            </div>
+            </a>
+        </li>
+        <li class="item" style="background-image: url(http://naverbooking.phinf.naver.net/20170209_66/1486628146913la6nC_JPEG/image.jpg); width: 338px;">
+            <a href="#"> <span class="img_btm_border"></span> <span class="img_right_border"></span> <span class="img_bg_gra"></span>
+            <div class="event_txt">
+                <h4 class="event_txt_tit"></h4>
+                <p class="event_txt_adr"></p>
+                <p class="event_txt_dsc"></p>
+            </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+--------------------------------------
+.container_visual {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden
+}
+
+.event .section_visual .group_visual .container_visual {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden
+}
+
+.event .section_visual .group_visual .container_visual .visual_img {
+    position: relative;
+    min-height: 177px
+}
+
+.event .section_visual .group_visual .container_visual .visual_img .item {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    width: 84.4%;
+    height: 177px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-sizing: border-box
+}
+
+
+@media screen and (max-width: 320px) {
+    .event .section_visual .group_visual .container_visual .visual_img .item {
+        height:177px
+    }
+}
+
+.event .section_visual .group_visual .container_visual .visual_img .item .event_txt {
+    position: absolute;
+    bottom: 12px;
+    left: 15px;
+    z-index: 10;
+    width: 205px;
+    color: #fff
+}
+
+.event .section_visual .group_visual .container_visual .visual_img .item .event_txt .event_txt_tit {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 10px
+}
+
+.event .section_event_tab .event_tab_lst>.item .anchor,.event .section_visual .group_visual .container_visual .visual_img .item .event_txt .event_txt_adr,.event .section_visual .group_visual .container_visual .visual_img .item .event_txt .event_txt_dsc {
+    font-family: -apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',Helvetica Nenu,Helvetica,Roboto,Arial,NanumGothicWebR,'맑은고딕',MalgunGothic,'돋움',Dotum,sans-serif;
+    font-weight: 400;
+    white-space: nowrap
+}
+
+.event .section_visual .group_visual .container_visual .visual_img .item .event_txt .event_txt_adr,.event .section_visual .group_visual .container_visual .visual_img .item .event_txt .event_txt_dsc {
+    font-size: 16px;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.event .section_visual .group_visual .container_visual .visual_img .item .img_right_border {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-right: 1px solid #000;
+    opacity: .1;
+    filter: alpha(opacity=10);
+    vertical-align: bottom;
+    -webkit-box-sizing: border-box;
+    moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.event .section_visual .group_visual .container_visual .prev_e {
+    position: absolute;
+    right: 15.6%;
+    width: 35px;
+    height: 100%;
+    z-index: 15
+}
+
+@media screen and (max-width: 320px) {
+    .event .section_visual .group_visual .container_visual .prev_e {
+        left:235px
+    }
+}
+
+.event .section_visual .group_visual .container_visual .prev_e .prev_inn {
+    height: 35px;
+    position: absolute;
+    bottom: 15px
+}
+
+.event .section_visual .group_visual .container_visual .prev_e .prev_inn .btn_pre_e {
+    position: relative;
+    display: block;
+    z-index: 1
+}
+
+.event .section_visual .group_visual .container_visual .prev_e .prev_inn .btn_pre_e .spr_event_pre {
+    width: 35px;
+    height: 35px;
+    background-position: 0 0
+}
+
+.event .section_visual .group_visual .container_visual .nxt_e {
+    position: absolute;
+    left: 84.4%;
+    width: 35px;
+    height: 100%;
+    z-index: 15
+}
+
+@media screen and (max-width: 320px) {
+    .event .section_visual .group_visual .container_visual .nxt_e {
+        left:270px
+    }
+}
+
+.event .section_visual .group_visual .container_visual .nxt_e .nxt_inn {
+    height: 35px;
+    position: absolute;
+    bottom: 15px
+}
+
+.event .section_visual .group_visual .container_visual .nxt_e .nxt_inn .btn_nxt_e {
+    position: relative;
+    z-index: 1
+}
+
+.event .section_visual .group_visual .container_visual .nxt_e .nxt_inn .btn_nxt_e .spr_event_nxt {
+    width: 35px;
+    height: 35px;
+    background-position: -35px 0
+}
+
+.event .section_visual .group_visual .container_visual .nxt_fix {
+    background-color: #000;
+    opacity: .5;
+    filter: alpha(opacity=50);
+    moz-box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 84.4%;
+    right: 0;
+    z-index: 10;
+    width: 15.6%;
+    vertical-align: top;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box
+}
