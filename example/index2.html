@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Traversing</title>
+	<style type="text/css">
+		#foo{
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<ul id="depth1">
+		<li>foo</li>
+		<li>bar
+			<ul id="depth2">
+				<li id="bar1">
+					<ul id="depth3">
+						<li><div id="bar11">bar11</div></li>
+						<li id="bar12">bar12</li>
+					</ul>
+				</li>
+				<li>barz2</li>
+			</ul>
+		</li>
+	</ul>
+
+
+	<script type="text/javascript" src="./jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+
+	</script>
+</body>
+</html>

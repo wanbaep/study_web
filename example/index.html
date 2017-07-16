@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>Basic</title>
+	<style type="text/css">
+		.complete{
+			text-decoration: line-through;
+			font-style: italic;
+			color: grey;
+		}
+	</style>
+</head>
+<body>
+	<input id="todo" type="text" placeholder="add" />
+	<input id="add" type="button" value="todo" />
+
+	<ul id="todolist">
+		<li><input type="checkbox"/><span>할 일 하기</span></li>
+		<li><input type="checkbox"/><span>할 일 하기2</span></li>
+	</ul>
+	<script type="text/javascript" src="./jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+		$("#todolist").on("click", function(event){
+			console.log("target %o", event.target);
+			console.log("currentTarget %o", event.currentTarget);
+			console.log("this %o",this);
+		});
+		
+		/*$("#todolist").on("click","li",function(event){
+			console.log("target %o", event.target);
+			console.log("currentTarget %o", event.currentTarget);
+			console.log("this %o",this);
+		});*/
+	</script>
+</body>
+</html>
