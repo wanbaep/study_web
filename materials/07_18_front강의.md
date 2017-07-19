@@ -404,18 +404,57 @@ var doubled = arr.map(function(v){
 ----------------------------------
 - todo
 	- 예매자 한줄평
-		- 별점, 평점
-		- 한줄평 내용, 별점, 생성일자
+		- ~별점, 평점~
+		- ~한줄평 내용, 별점, 생성일자~
+			- **생성일자 YYYY.MM.DD 형식으로 변경**
 		- 이미지
-			- 이미지 한장 삽입
-			- 이미지 개수 출력
+			- ~이미지 한장 삽입~
+				- file table
+					- id
+					- file_name
+					- save_file_name
+					- file_length
+					- content_type
+			- ~이미지 개수 출력~
 		- 이미지 팝업 레이어
 			- 화면에 꽉찬 레이어 팝업
 			- 터치를 이용하여 좌우로 이동
-	- 네이버 지도(api)
+	- ~네이버 지도(api)~
 	- 터치 이미지 슬라이드
+		- 숫자 변경
+		- 완벽한 터치
 	- 상단 화면
-		- 전시 홈페이지로 이동
-		- 전화걸기
-		- 이메일 보내기
-		- 가는길 찾기(네이버지도로 연결)
+		- ~전시 홈페이지로 이동~
+		- ~전화걸기~
+			- href="tel:010-..""
+		- ~이메일 보내기~
+			- href="mailto:wa...@naver.com"
+		- ~가는길 찾기(네이버지도로 연결)~
+
+- ajax Form
+```
+$.ajax({
+	url:'https://openapi.map.naver.com/api/geocode',
+	type : "GET",
+	data: {
+		encoding:'utf-8',
+		coordType:'latlng',
+		query: encodedAddress
+	},
+	contentType : "application/json; charset=UTF-8",
+	headers : {
+		"X-Naver-Client-Id" : "AiZisW993TeCGaS7Wq87",
+		"X-Naver-Client-Secret" : "3oLOkvQf_Q"
+	},
+}).done(function(res, status){
+	console.log(res);
+}).fail(function(jQueryXhr, status){
+
+});
+```
+
+- Spring에서 ajax로 open api가져오기
+http://blog.naver.com/PostView.nhn?blogId=platinasnow&logNo=220732491939
+
+- RestController에서 binary file 반환
+http://www.technicalkeeda.com/spring-tutorials/download-pdf-file-using-spring-mvc-rest-controller
