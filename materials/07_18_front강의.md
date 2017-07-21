@@ -402,6 +402,36 @@ var doubled = arr.map(function(v){
 		- 예외처리 하도록 설정하는 annotation
 
 ----------------------------------
+
+- ajax Form
+```
+$.ajax({
+	url:'https://openapi.map.naver.com/api/geocode',
+	type : "GET",
+	data: {
+		encoding:'utf-8',
+		coordType:'latlng',
+		query: encodedAddress
+	},
+	contentType : "application/json; charset=UTF-8",
+	headers : {
+		"X-Naver-Client-Id" : "AiZisW993TeCGaS7Wq87",
+		"X-Naver-Client-Secret" : "3oLOkvQf_Q"
+	},
+}).done(function(res, status){
+	console.log(res);
+}).fail(function(jQueryXhr, status){
+
+});
+```
+
+- Spring에서 ajax로 open api가져오기
+http://blog.naver.com/PostView.nhn?blogId=platinasnow&logNo=220732491939
+
+- RestController에서 binary file 반환
+http://www.technicalkeeda.com/spring-tutorials/download-pdf-file-using-spring-mvc-rest-controller
+
+--------------
 - todo
 	- 예매자 한줄평
 		- ~별점, 평점~
@@ -431,30 +461,7 @@ var doubled = arr.map(function(v){
 			- href="mailto:wa...@naver.com"
 		- ~가는길 찾기(네이버지도로 연결)~
 
-- ajax Form
-```
-$.ajax({
-	url:'https://openapi.map.naver.com/api/geocode',
-	type : "GET",
-	data: {
-		encoding:'utf-8',
-		coordType:'latlng',
-		query: encodedAddress
-	},
-	contentType : "application/json; charset=UTF-8",
-	headers : {
-		"X-Naver-Client-Id" : "AiZisW993TeCGaS7Wq87",
-		"X-Naver-Client-Secret" : "3oLOkvQf_Q"
-	},
-}).done(function(res, status){
-	console.log(res);
-}).fail(function(jQueryXhr, status){
-
-});
-```
-
-- Spring에서 ajax로 open api가져오기
-http://blog.naver.com/PostView.nhn?blogId=platinasnow&logNo=220732491939
-
-- RestController에서 binary file 반환
-http://www.technicalkeeda.com/spring-tutorials/download-pdf-file-using-spring-mvc-rest-controller
+- 수정 필요 사항
+	- ProductList
+		- SELECT_PRODUCT_LIST, SELECT_PRODUCT_LIST_CAT
+		- JOIN해서 데이터를 가져오다보니 file이 여러개 있는 경우 file개수만큼 중복 상품을 가져온다.
