@@ -1,8 +1,8 @@
 {
-  "name": "singleton_module",
+  "name": "example",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "jquery-3.2.1.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
