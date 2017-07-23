@@ -1,6 +1,6 @@
 ## fornt강의
 
-#### 1. 
+#### 1.
 - arr.join() ?
 
 '느리다'의 종류
@@ -114,7 +114,7 @@ Test.some();
 - compile을 여러번 할 필요가 없다.
 
 ----
-6. 
+6.
 - selector를 사용하는 code를 init function으로 만들어서 외부로 노출 시킨다.
 - 이후, init함수를 DOMContentload된 시점에 호출하면 된다.
 - 이로 인해서 다른 노출할 필요가 없는 함수는 노출하지 않는다.
@@ -123,7 +123,7 @@ Test.some();
 
 var categorylist = (function(){
 	var curruntCategoryId = 0;
-	
+
 	function init(){
 		$('ul.event_tab_lst').on('click', 'li.item', viewProductByCategory);
 		$('ul.event_tab_lst').on('click', 'li.item', updateCount);
@@ -179,7 +179,7 @@ if(){
 - Q2 performance 성능 이슈
 	- js 파일 cache
 	- html파일과 js파일을 나누어서 읽어들이지 않을까?
-		- 
+		-
 	- js파일 분리
 		- caching
 		- 일반적으로 사용
@@ -187,7 +187,7 @@ if(){
 		- 네트워크에 영향을 덜 받기 위해서 사용 (네트워크에 민감한 페이지)
 		- javascript사용이 적은 경우
 		- caching하는 비용보다 네트워크 비용이 적다고 판단하는 경우
-- Q3 
+- Q3
 	- library 배포는 npm으로 통합
 	- pattern
 		- CommonJS (동기)
@@ -241,7 +241,7 @@ $("#select")...
 
 - Observer Pattern
 	- (Observable Pattern은 전혀 다른 pattern)
-	- 
+	-
 
 - Rectangle.prototype = new eg.Component();
 	- 상속하는 구문
@@ -249,7 +249,7 @@ $("#select")...
 function	Rectangle(){		
 }		
 Rectangle.prototype = new	eg.Component();		
-Rectangle.prototype.constructor =	Rectangle;	
+Rectangle.prototype.constructor =	Rectangle;
 this.trigger("checked");
 세트
 
@@ -279,8 +279,8 @@ trigger를 하면 binding된 이벤트가 실행된다.
 - 논리적으로 하나의 모듈만 존재해야 하지 않는 경우를 제외하고는 여러개의 module을 instance(같은 module 여러개 배치) 할 수 있도록 구현해야 한다.
 
 - String 변수 초기화
-	- var name = '';
-	- var _name 도 사용
+	- var `name` = '';
+	- var `_name` 도 사용
 
 - Memory load 단위는 function
 - scope chain으로 인해서 stack이 없다(javascript)
@@ -434,32 +434,32 @@ http://www.technicalkeeda.com/spring-tutorials/download-pdf-file-using-spring-mv
 --------------
 - todo
 	- 예매자 한줄평
-		- ~별점, 평점~
-		- ~한줄평 내용, 별점, 생성일자~
+		- ~~별점, 평점~~
+		- ~~한줄평 내용, 별점, 생성일자~~
 			- **생성일자 YYYY.MM.DD 형식으로 변경**
 		- 이미지
-			- ~이미지 한장 삽입~
+			- ~~이미지 한장 삽입~~
 				- file table
 					- id
 					- file_name
 					- save_file_name
 					- file_length
 					- content_type
-			- ~이미지 개수 출력~
+			- ~~이미지 개수 출력~~
 		- 이미지 팝업 레이어
 			- 화면에 꽉찬 레이어 팝업
 			- 터치를 이용하여 좌우로 이동
-	- ~네이버 지도(api)~
+	- ~~네이버 지도(api)~~
 	- 터치 이미지 슬라이드
 		- 숫자 변경
 		- 완벽한 터치
 	- 상단 화면
-		- ~전시 홈페이지로 이동~
-		- ~전화걸기~
+		- ~~전시 홈페이지로 이동~~
+		- ~~전화걸기~~
 			- href="tel:010-..""
-		- ~이메일 보내기~
+		- ~~이메일 보내기~~
 			- href="mailto:wa...@naver.com"
-		- ~가는길 찾기(네이버지도로 연결)~
+		- ~~가는길 찾기(네이버지도로 연결)~~
 
 - 수정 필요 사항
 	- ProductList
