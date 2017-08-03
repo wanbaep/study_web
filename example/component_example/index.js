@@ -52,4 +52,4 @@ var some = new Rectangle();
 
 some.thing();
 some.trigger("hi");
-// some.trigger("hi");
+some.trigger("hi");

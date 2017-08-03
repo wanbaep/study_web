@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>File API (simple)</title>
+</head>
+
+<body>
+    <div id="ticket1">
+        <button class="plus">+</button>
+        
+        <button class="minus">+</button>
+
+
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../node_modules/@egjs/component/dist/component.js"></script>
+    <script type="text/javascript" src="./app.js">
+    </script>
+</body>
+
+</html>
+
+<!-- tag 의 event 중 onchange -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>File API (simple)</title>
+</head>
+
+<body>
+    <article>
+        <p id="status">File API & FileReader API not supported</p>
+        <p>
+            <input type=file>
+        </p>
+        <p>Select an image from your machine to read the contents of the file without using a server</p>
+        <div id="holder"></div>
+    </article>
+    <script>
+    console.log("1");
+    var upload = document.getElementsByTagName('input')[0],
+        holder = document.getElementById('holder'),
+        state = document.getElementById('status');
+
+    if (typeof window.FileReader === 'undefined') {
+        state.className = 'fail';
+    } else {
+        state.className = 'success';
+        state.innerHTML = 'File API & FileReader available';
+    }
+
+    upload.onchange = function(e) {
+        console.log("hi");
+        e.preventDefault();
+
+        var file = upload.files[0],
+            reader = new FileReader();
+        console.log("file %o, reader %o", file, reader);
+
+        reader.onload = function(event) {
+            console.log("event %o", event);
+            var img = new Image();
+            img.src = event.target.result;
+            // note: no onload required since we've got the dataurl...I think! :)
+            if (img.width > 560) { // holder width
+                img.width = 560;
+            }
+            holder.innerHTML = '';
+            holder.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+
+        return false;
+    };
+    </script>
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../node_modules/@egjs/component/dist/component.js"></script>
+    <script type="text/javascript" src="./app.js">
+    </script>
+</body>
+
+</html>
+
+<!-- tag 의 event 중 onchange -->

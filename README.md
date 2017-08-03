@@ -4,6 +4,7 @@ study material about web (jsp/servlet, spring, front-end)
 
 - [07-23 학습일지](materials/07_23_학습일지.md)
 - [07-22 학습일지](materials/07_22_학습일지.md)
+  - 함수 객체의 생성 원리?
 - [07-21 학습일지](materials/07_22_학습일지.md)
 - [07-20 학습일지](materials/07_20_naver_id_login_sourcecode.md)
 - [07-19 학습일지](materials/07_19_FE-Common.md)
