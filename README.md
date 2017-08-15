@@ -1,6 +1,10 @@
 # study_web
 study material about web (jsp/servlet, spring, front-end)
 
+- [08-15 학습일지](materials/08_15_학습일지.md)
+- [08-14 학습일지](materials/08_14_학습일지.md)
+
+---
 
 - [07-23 학습일지](materials/07_23_학습일지.md)
 - [07-22 학습일지](materials/07_22_학습일지.md)
