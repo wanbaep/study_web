@@ -4,6 +4,9 @@ study material about web (jsp/servlet, spring, front-end)
 - [Reservation System 개발 명세서](materials/개발명세.md)
 ---
 
+- [08-18 학습일지](materials/08_18_학습일지.md)
+- [08-17 학습일지](materials/08_17_학습일지.md)
+- [08-16 학습일지](materials/08_16_학습일지.md)
 - [08-15 학습일지](materials/08_15_학습일지.md)
 - [08-14 학습일지](materials/08_14_학습일지.md)
 
