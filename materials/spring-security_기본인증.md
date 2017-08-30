@@ -116,7 +116,7 @@ protected void successfulAuthentication(HttpServletRequest request, HttpServletR
 ```
 
 ### 기본 로그인 인증 필터와 OAuth2 인증 필터 Class Diagram
-<img src="https://github.com/wanbaep/study_web/blob/master/images/processingFilter-class-diagram.png" alt="image" width="50%">
+<img src="https://github.com/wanbaep/study_web/blob/master/images/processingFilter-class-diagram.png" alt="image" width="75%">
 
 
 ### 참고 URL
