@@ -55,7 +55,6 @@ return this.getAuthenticationManager().authenticate(authRequest);
 
 
 - Authentication Class Hierarchy
-hi
 
 <img src="https://github.com/wanbaep/study_web/blob/master/images/Authentication-class-diagram.png" alt="image" width="50%">
 
@@ -115,6 +114,10 @@ protected void successfulAuthentication(HttpServletRequest request, HttpServletR
     this.successHandler.onAuthenticationSuccess(request, response, authResult);
 }
 ```
+
+### 기본 로그인 인증 필터와 OAuth2 인증 필터 Class Diagram
+<img src="https://github.com/wanbaep/study_web/blob/master/images/processingFilter-class-diagram.png" alt="image" width="50%">
+
 
 ### 참고 URL
 - https://www.slideshare.net/madvirus/ss-36809454
