@@ -57,7 +57,7 @@ return this.getAuthenticationManager().authenticate(authRequest);
 - Authentication Class Hierarchy
 hi
 
-<img src="../images/Authentication-class-diagram.png" alt="image" style="max-width:40%;">
+<img src="https://github.com/wanbaep/study_web/blob/master/images/Authentication-class-diagram.png" alt="image" style="width:40%;">
 
 ### 기본 인증 처리 과정
 `UsernamePasswordAuthenticationProcessingFilter` 는 `AbstractAuthenticationProcessingFilter` Class를 확장하는 Class이며, doFilter method 가 실행되면서 authentication정보를 가져오기 위해서 **attemptAuthentication** method를 호출한다. `AbstractAuthenticationProcessingFilter`의 attemptAuthentication method는 Abstract method이기 때문에 `UsernamePasswordAuthenticationProcessingFilter` 에서 구현체를 작성해 주어야 한다.
