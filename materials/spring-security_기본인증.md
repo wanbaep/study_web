@@ -57,7 +57,7 @@ return this.getAuthenticationManager().authenticate(authRequest);
 - Authentication Class Hierarchy
 hi
 
-![authentication-class-diagram](https://github.com/wanbaep/study_web/blob/master/images/Authentication-class-diagram.png =40%x)
+![authentication-class-diagram](https://github.com/wanbaep/study_web/blob/master/images/Authentication-class-diagram.png =100x)
 
 
 ### 기본 인증 처리 과정
