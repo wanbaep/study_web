@@ -1,10 +1,5 @@
 ## Spring Security 기본 인증
 
-### URL
-- https://www.slideshare.net/madvirus/ss-36809454
-- http://preludeb.egloos.com/v/4738521
-
-
 ### 보안관련 3요소
 1. Principal (접근 주체)
 - 보호된 대상에 접근하는 사용자
@@ -33,14 +28,38 @@
 > `SecurityContextHolder.getContext().setAuthentication(Authentication)`
 > SecurityContext에 저장된 Authentication 정보는 사용자의 인증정보이기 때문에 scope가 세션가 되어야 하며 기본적으로 SecurityContext는 ThreadLocal에 저장한다.
 
-### Authentication정보를 가져오는 과정
-- 기본 로그인 인증처리는 AuthenticationManager에 의해서 처리된다.
+### AuthenticationManager
+- 기본 로그인 **인증처리**는 **AuthenticationManager**에 의해서 처리된다.
+```java
+public interface AuthenticationManager {
+	Authentication authenticate(Authentication authentication)
+			throws AuthenticationException;
+}
+```
+
+> parameter로 **authentication request**를 받고 authentication 처리를 한 후에 성공 시 Authentication 객체를 반환한다.
+
+> 인증에 실패하는 경우 AuthenticationException을 발생한다.
+
+### Authentication Request
+- **UsernamePasswordAuthenticationProcessingFilter** Class의 `attemtAuthentication` 는 Authentication 객체를 가져오기 위한 method이다.
+- 해당 method에서는 Authentication Request를 만들고 이를 AuthenticationManager가 사용해서 Authentication객체를 만든다.
+```java
+UsernamePasswordAuthenticationToken authRequest = new UsernamePasswordAuthenticationToken(username, password);
+this.setDetails(request, authRequest);
+return this.getAuthenticationManager().authenticate(authRequest);
+```
+- username과 password는 request로 부터 가져오며, 해당 정보를 이용해서 UsernamePasswordAuthenticationToken을 생성한다. 해당 Token에서 username -> principal, password -> credentials 값으로 저장한다. 이후 authentication에 대한 요청이기 때문에 authenticated값은 false로 설정한다.
+- authRequest에 현재 request정보를 저장한 후에 AuthenticationManager의 authenticate method로 Authentication객체를 얻어온다.
+- AuthenticationManager는 Interface이기 때문에 구현체인 ProviderManager의 Authentication이 실행된다.
+
+
+- Authentication Class Hierarchy
+![Authentication-class-diagram](/images/Authentication-class-diagram.png)
 
 
 ### 기본 인증 처리 과정
-`UsernamePasswordAuthenticationProcessingFilter` 
-
-AbstractAuthenticationProcessingFilter Class의 doFilter method
+`UsernamePasswordAuthenticationProcessingFilter` 는 `AbstractAuthenticationProcessingFilter` Class를 확장하는 Class이며, doFilter method 가 실행되면서 authentication정보를 가져오기 위해서 **attemptAuthentication** method를 호출한다. `AbstractAuthenticationProcessingFilter`의 attemptAuthentication method는 Abstract method이기 때문에 `UsernamePasswordAuthenticationProcessingFilter` 에서 구현체를 작성해 주어야 한다.
 ```java
 public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
     HttpServletRequest request = (HttpServletRequest)req;
@@ -78,6 +97,8 @@ public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
 }
 ```
 
+- 인증이 완료된 후 successfulAuthentication method가 호출되며 해당 부분에서는 Authentication정보를 SecurityContext에 저장하고 SuccessHandler의 onAuthenticationSuccess함수를 호출한다.
+
 ```java
 protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
     if (this.logger.isDebugEnabled()) {
@@ -93,3 +114,7 @@ protected void successfulAuthentication(HttpServletRequest request, HttpServletR
     this.successHandler.onAuthenticationSuccess(request, response, authResult);
 }
 ```
+
+### 참고 URL
+- https://www.slideshare.net/madvirus/ss-36809454
+- http://preludeb.egloos.com/v/4738521
